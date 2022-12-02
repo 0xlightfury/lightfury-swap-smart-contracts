@@ -355,8 +355,8 @@ contract Initializer is Ownable {
     IUniswapV2Router02 public router;
     IUniswapV2Factory public factory;
     address public BUSD = address(0x1c7f85bFdFBC965289B7A523833fBED1FAFCFD6d);
-    address public FURY_BNB_lp;
-    address public BUSD_BNB_lp = address(0xb2a2d1A857E9562cB2d025583b7DDc50BD3bb8e2);
+    address public FURY_ETH_lp;
+    address public BUSD_ETH_lp = address(0xb2a2d1A857E9562cB2d025583b7DDc50BD3bb8e2);
     address public FURY_BUSD_lp;
     address public projectOwner = address(0x976899e6Cf1b9aa1De8F8dF95fc8bFe897DBf70e);
     address public projectTreasury = address(0xe4bb49583e45F43d989571091546353d16E8E5C9);
@@ -377,7 +377,7 @@ contract Initializer is Ownable {
     ) external onlyOwner {
         router = IUniswapV2Router02(0x2154D5532E78b28d486d2D0A4140291bCDC5AB60);
         factory = IUniswapV2Factory(router.factory());
-        FURY_BNB_lp = factory.createPair(fury, router.WETH());
+        FURY_ETH_lp = factory.createPair(fury, router.WETH());
         FURY_BUSD_lp = factory.createPair(fury, BUSD);
 
         IFuryToken(fury).setMinter(masterChef, true);
@@ -397,8 +397,8 @@ contract Initializer is Ownable {
         IMasterChef(masterChef).updateWhiteList(furyPool, true);
         IMasterChef(masterChef).add(57600, dFURYPOOL, false, false); // 0
         IMasterChef(masterChef).add(0, dLOTTO, false, false); // 1
-        IMasterChef(masterChef).add(4000, FURY_BNB_lp, true, false); // 2
-        IMasterChef(masterChef).add(3000, BUSD_BNB_lp, true, false); // 3
+        IMasterChef(masterChef).add(4000, FURY_ETH_lp, true, false); // 2
+        IMasterChef(masterChef).add(3000, BUSD_ETH_lp, true, false); // 3
         IMasterChef(masterChef).add(2000, FURY_BUSD_lp, true, false); // 4
         IOWNER(masterChef).transferOwnership(projectOwner);
 
