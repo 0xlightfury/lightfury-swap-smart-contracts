@@ -26,8 +26,8 @@ init LP: 75_000
 8.RandomNumberGenerator 0xD2F816EAE3E58adF4729b407eF3E9213Eac0B97E
 9.LightFurySwapLottery 0x513cF6A597f402b5E4b66a1b4c2713F3C1c50318
 
-endTime : 1669487836
-priceTicketInFury : 1000000000000000000
+endTime : 1670025600
+priceTicketInFury : 10000000000000000000
 discountDivisor : 2000
 rewardsBreakdown : 250,375,625,1250,2500,5000
 treasuryFee : 2000
